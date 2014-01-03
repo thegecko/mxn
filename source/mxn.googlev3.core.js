@@ -214,7 +214,16 @@ Mapstraction: {
 	},
 	
 	addMarker: function(marker, old) {
-	   return marker.toProprietary(this.api);		
+		var gpin = marker.toProprietary(this.api);	
+		
+		google.maps.event.addListener(gpin, 'dragstart', function() {	
+			marker.dragstart.fire();
+		});
+		google.maps.event.addListener(gpin, 'dragend', function() {	
+			marker.dragend.fire();
+		});
+
+		return gpin;
 	},
 
 	removeMarker: function(marker) {
