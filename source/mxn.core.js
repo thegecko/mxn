@@ -1396,7 +1396,9 @@ var Marker = mxn.Marker = function(point) {
 	mxn.addEvents(this, [ 
 		'openInfoBubble',	// Info bubble opened
 		'closeInfoBubble', 	// Info bubble closed
-		'click'				// Marker clicked
+		'click',			// Marker clicked
+		'dragstart',		// Marker drag begin
+		'dragend'			// Marker drag end
 	]);
 };
 

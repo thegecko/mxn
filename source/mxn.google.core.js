@@ -147,6 +147,13 @@ Mapstraction: {
 		GEvent.addListener(gpin, 'infowindowclose', function() {
 			marker.closeInfoBubble.fire();
 		});		
+		GEvent.addListener(gpin, 'dragstart', function() {
+			marker.dragstart.fire();
+		});
+		GEvent.addListener(gpin, 'dragend', function() {
+			marker.dragend.fire();
+		});
+
 		return gpin;
 	},
 
