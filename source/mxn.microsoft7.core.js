@@ -395,6 +395,10 @@ Marker: {
 		var loc = this.proprietary_marker.getLocation();
 		var point = new mxn.LatLonPoint(loc.latitude, loc.longitude);
 		this.location = point;
+	},
+
+	updateIcon: function(iconUrl, iconSize) {
+		// TODO: Add provider code
 	}
 	
 },

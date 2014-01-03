@@ -260,11 +260,19 @@ Marker: {
 
 	update: function() {
 		// TODO: Add provider code
+	},
+
+	updateIcon: function(iconUrl, iconSize) {
+		// TODO: Add provider code
 	}
 	
 },
 
 Polyline: {
+
+	fromProprietary: function(propPolyline) {
+		// TODO: Add provider code
+	},
 
 	toProprietary: function() {
 		// TODO: Add provider code
@@ -276,8 +284,7 @@ Polyline: {
 
 	hide: function() {
 		// TODO: Add provider code
-	}
-	
+	}	
 }
 
 });

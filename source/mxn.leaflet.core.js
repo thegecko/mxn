@@ -338,6 +338,10 @@ Marker: {
 
 	update: function() {
 		throw 'Not implemented';
+	},
+
+	updateIcon: function(iconUrl, iconSize) {
+		throw 'Not implemented';
 	}
 	
 },

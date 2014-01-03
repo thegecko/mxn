@@ -595,6 +595,19 @@ Marker: {
 		var point = new mxn.LatLonPoint();
 		point.fromProprietary('googlev3', this.proprietary_marker.getPosition());
 		this.location = point;
+	},
+
+	updateIcon: function(iconUrl, iconSize) {
+		var icon = this.proprietary_marker.getIcon();
+
+		if (iconUrl) {
+			icon.url = iconUrl;
+		}
+		if (iconSize) {
+			icon.size = new google.maps.Size(iconSize[0], iconSize[1]);
+		}
+
+		this.proprietary_marker.setIcon(icon);
 	}
 	
 },

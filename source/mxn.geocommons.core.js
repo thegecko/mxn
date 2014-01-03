@@ -305,6 +305,10 @@ mxn.register('geocommons', {
 
 		update: function() {
 			// TODO: Add provider code
+		},
+
+		updateIcon: function(iconUrl, iconSize) {
+			// TODO: Add provider code
 		}
 
 	},

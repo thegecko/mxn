@@ -466,6 +466,10 @@ Marker: {
 		point = new mxn.LatLonPoint();
 		point.fromProprietary('yandex', this.proprietary_marker.getGeoPoint());
 		this.location = point;
+	},
+
+	updateIcon: function(iconUrl, iconSize) {
+		// TODO: Add provider code
 	}
 },
 
