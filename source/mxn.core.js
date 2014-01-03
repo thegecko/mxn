@@ -1185,6 +1185,9 @@ Mapstraction.prototype.getMap = function() {
 	return this.maps[this.api];
 };
 
+Mapstraction.prototype.getApi = function() {
+	return this.api;
+};
 
 //////////////////////////////
 //
