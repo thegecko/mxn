@@ -363,6 +363,10 @@ Marker: {
 		var point = new mxn.LatLonPoint(this.proprietary_marker.Latitude,this.proprietary_marker.Longitude);
 		
 		this.location = point;
+	},
+
+	updateIcon: function(iconUrl, iconSize) {
+		// TODO: Add provider code
 	}
 	
 },

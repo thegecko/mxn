@@ -1451,7 +1451,17 @@ mxn.addProxyMethods(Marker, [
 	 * @name mxn.Marker#update
 	 * @function
 	 */
-	'update'
+	'update',
+
+	/**
+	 * Updates the current Marker to use a different image.
+	 * @name mxn.Marker#updateIcon
+	 * @function
+	 * @param {String} iconUrl The URL of the image you want to be the icon
+	 * @param {String} iconSize The size of the icon image
+	 */
+	'updateIcon'
+	
 ]);
 
 Marker.prototype.setChild = function(some_proprietary_marker) {

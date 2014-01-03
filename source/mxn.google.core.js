@@ -499,6 +499,12 @@ Marker: {
 		point = new mxn.LatLonPoint();
 		point.fromProprietary('google', this.proprietary_marker.getPoint());
 		this.location = point;
+	},
+
+	updateIcon: function(iconUrl, iconSize) {
+		if (iconUrl) {
+			this.proprietary_marker.setImage(iconUrl);
+		}
 	}
 	
 },
