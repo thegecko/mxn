@@ -592,6 +592,22 @@ Marker: {
 
 Polyline: {
 
+	fromProprietary: function(gPolyline) {
+		var points = [];
+		var path = gPolyline.getPath();
+
+		for (var i = 0; i < path.getLength(); i++) {
+			point = new LatLonPoint();
+			point.fromProprietary('googlev3', path.getAt(i));
+			points.push(point);
+		}
+
+		this.points = points;
+		this.color = gPolyline.strokeColor;
+		this.opacity = gPolyline.strokeOpacity;
+		this.width = gPolyline.strokeWeight;
+	},
+
 	toProprietary: function() {
 		var points = [];
 		for (var i = 0, length = this.points.length; i < length; i++) {
