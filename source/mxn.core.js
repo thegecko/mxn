@@ -1847,7 +1847,7 @@ var Radius = mxn.Radius = function(center, quality) {
 	var rad = Math.PI / 180;
 	this.calcs = [];
 
-	for(var i = 0; i < 360; i += quality){
+	for(var i = 0; i < 360; i += 360/quality){
 		this.calcs.push([Math.cos(i * rad) / latConv, Math.sin(i * rad) / lonConv]);
 	}
 };
@@ -1873,7 +1873,8 @@ Radius.prototype.getPolyline = function(radius, color) {
 	points.push(points[0]);
 
 	var line = new Polyline(points);
-	line.setColor(color);
+	line.setClosed(true);
+	if (color) line.setColor(color);
 
 	return line;
 };

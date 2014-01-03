@@ -14,7 +14,7 @@ Mapstraction: {
 						marker.mapstraction_marker.click.fire();
 					}
 					else if ( location ) {
-						me.click.fire({'location': new mxn.LatLonPoint(location.y, location.x)});
+						me.click.fire({'location': new mxn.LatLonPoint(location.nb, location.ob)});
 					}
 					
 					// If the user puts their own Google markers directly on the map
@@ -504,6 +504,18 @@ Marker: {
 },
 
 Polyline: {
+
+	fromProprietary: function(gpolyline) {
+		var points = [];
+
+		for (var i = 0; i < gpolyline.getVertexCount(); i++) {
+			point = new LatLonPoint();
+			point.fromProprietary('google', gpolyline.getVertex(i));
+			points.push(point);
+		}
+
+		this.points = points;
+	},
 
 	toProprietary: function() {
 		var gpoints = [];

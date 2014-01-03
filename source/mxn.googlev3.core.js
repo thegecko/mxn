@@ -601,6 +601,22 @@ Marker: {
 
 Polyline: {
 
+	fromProprietary: function(gPolyline) {
+		var points = [];
+		var path = gPolyline.getPath();
+
+		for (var i = 0; i < path.getLength(); i++) {
+			point = new LatLonPoint();
+			point.fromProprietary('googlev3', path.getAt(i));
+			points.push(point);
+		}
+
+		this.points = points;
+		this.color = gPolyline.strokeColor;
+		this.opacity = gPolyline.strokeOpacity;
+		this.width = gPolyline.strokeWeight;
+	},
+
 	toProprietary: function() {
 		var points = [];
 		for (var i = 0, length = this.points.length; i < length; i++) {
@@ -615,8 +631,9 @@ Polyline: {
 		};
 		
 		if (this.closed) {
-			polyOptions.fillColor = this.fillColor || '#000000';
-			polyOptions.fillOpacity = polyOptions.strokeOpacity;
+			polyOptions.fillColor = this.fillColor || "#5462E3";
+			polyOptions.fillOpacity = this.opacity || "0.3";
+			polyOptions.strokeWeight = this.width || 0;
 			
 			return new google.maps.Polygon(polyOptions);
 		}
