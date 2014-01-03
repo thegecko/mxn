@@ -14,7 +14,7 @@ Mapstraction: {
 						marker.mapstraction_marker.click.fire();
 					}
 					else if ( location ) {
-						me.click.fire({'location': new mxn.LatLonPoint(location.y, location.x)});
+						me.click.fire({'location': new mxn.LatLonPoint(location.nb, location.ob)});
 					}
 					
 					// If the user puts their own Google markers directly on the map
