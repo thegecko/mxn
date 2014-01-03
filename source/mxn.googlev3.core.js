@@ -622,8 +622,9 @@ Polyline: {
 		};
 		
 		if (this.closed) {
-			polyOptions.fillColor = this.fillColor || '#000000';
-			polyOptions.fillOpacity = polyOptions.strokeOpacity;
+			polyOptions.fillColor = this.fillColor || "#5462E3";
+			polyOptions.fillOpacity = this.opacity || "0.3";
+			polyOptions.strokeWeight = this.width || 0;
 			
 			return new google.maps.Polygon(polyOptions);
 		}
