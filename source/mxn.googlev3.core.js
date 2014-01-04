@@ -597,7 +597,7 @@ Polyline: {
 		var path = gPolyline.getPath();
 
 		for (var i = 0; i < path.getLength(); i++) {
-			point = new LatLonPoint();
+			point = new mxn.LatLonPoint();
 			point.fromProprietary('googlev3', path.getAt(i));
 			points.push(point);
 		}
