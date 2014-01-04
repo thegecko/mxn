@@ -53,16 +53,9 @@ Directions: {
         var router = this.routers[this.api];
         
         // Polyline
-        var gPolyline = router.getPolyline();
-        var points = [];
-
-        for (var i = 0; i < gPolyline.getVertexCount(); i++) {
-            var point = new mxn.LatLonPoint();
-            point.fromProprietary(this.api, gPolyline.getVertex(i));
-            points.push(point);
-        }
-
-        var polyline = new mxn.Polyline(points);
+        var polyline = new mxn.Polyline();
+        polyline.api = this.api;
+        polyline.fromProprietary(router.getPolyline());
 
         // Directions
         var directions = [];
