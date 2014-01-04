@@ -515,7 +515,7 @@ Polyline: {
 		var points = [];
 
 		for (var i = 0; i < gpolyline.getVertexCount(); i++) {
-			point = new LatLonPoint();
+			point = new mxn.LatLonPoint();
 			point.fromProprietary('google', gpolyline.getVertex(i));
 			points.push(point);
 		}
