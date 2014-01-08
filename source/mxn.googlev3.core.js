@@ -413,9 +413,33 @@ Mapstraction: {
 	},
 
 	getPixelRatio: function() {
-		var map = this.maps[this.api];
 
-		// TODO: Add provider code	
+		function distanceBetween(point1, point2) {
+			var R = 6371; // km (change this constant to get miles)
+			//var R = 6378100; // meters
+			var lat1 = point1.lat();
+			var lon1 = point1.lng();
+			var lat2 = point2.lat();
+			var lon2 = point2.lng();
+			var dLat = (lat2-lat1) * Math.PI / 180;
+			var dLon = (lon2-lon1) * Math.PI / 180;
+			var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+			Math.cos(lat1 * Math.PI / 180 ) * Math.cos(lat2 * Math.PI / 180 ) *
+			Math.sin(dLon/2) * Math.sin(dLon/2);
+			var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+			var d = R * c;
+			return d;
+		}
+
+		var map = this.maps[this.api];
+		var projection = map.getProjection();
+		var centerPoint = map.getCenter();
+		var zoom = map.getZoom();
+		var centerPixel = projection.fromLatLngToPoint(centerPoint);
+		// distance is the distance in metres for 5 pixels (3-4-5 triangle)
+		var distancePoint = projection.fromPointToLatLng(new google.maps.Point(centerPixel.x + 3, centerPixel.y + 4));
+		//*1000(km to m), /5 (pythag), *2 (radius to diameter)
+		return 10000/distanceBetween(centerPoint, distancePoint);
 	},
 	
 	mousePosition: function(element) {
