@@ -77,6 +77,12 @@ Mapstraction: {
 				});
 			});
 
+			google.maps.event.addListener(map, 'mousemove', function(location){
+				me.mouseMove.fire({'location': 
+					new mxn.LatLonPoint(location.latLng.lat(),location.latLng.lng())
+				});
+			});
+
 			// deal with zoom change
 			google.maps.event.addListener(map, 'zoom_changed', function(){
 				// zoom_changed fires before the zooming has finished so we 

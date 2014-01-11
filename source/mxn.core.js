@@ -156,7 +156,15 @@ var Mapstraction = mxn.Mapstraction = function(element, api, debug) {
 		 * @name mxn.Mapstraction#polylineRemoved
 		 * @event
 		 */
-		'polylineRemoved'
+		'polylineRemoved',
+
+		/**
+		 * Mouse moved {location: LatLonPoint}
+		 * @name mxn.Mapstraction#mouseMove
+		 * @event
+		 */
+		'mouseMove'
+
 	]);
 	
 	// finally initialize our proper API map
