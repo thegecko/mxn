@@ -505,6 +505,11 @@ Marker: {
 		if (iconUrl) {
 			this.proprietary_marker.setImage(iconUrl);
 		}
+	},
+
+	updateLocation: function(point) {
+		this.location = point;
+		this.proprietary_marker.setPoint(point.toProprietary('google'));
 	}
 	
 },

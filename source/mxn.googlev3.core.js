@@ -608,6 +608,11 @@ Marker: {
 		}
 
 		this.proprietary_marker.setIcon(icon);
+	},
+
+	updateLocation: function(point) {
+		this.location = point;
+		this.proprietary_marker.setPosition(point.toProprietary('googlev3'));
 	}
 	
 },

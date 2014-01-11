@@ -1460,7 +1460,15 @@ mxn.addProxyMethods(Marker, [
 	 * @param {String} iconUrl The URL of the image you want to be the icon
 	 * @param {String} iconSize The size of the icon image
 	 */
-	'updateIcon'
+	'updateIcon',
+
+	/**
+	 * Updates the current Marker to use a different location point.
+	 * @name mxn.Marker#updateLocation
+	 * @function
+	 * @param {LatLonPoint} point The new location
+	 */
+	'updateLocation'
 	
 ]);
 
