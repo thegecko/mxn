@@ -32,6 +32,10 @@ Mapstraction: {
 				GEvent.addListener(this.maps[api], 'zoomend', function() {
 					me.changeZoom.fire();
 				});
+
+				GEvent.addListener(this.maps[api], 'mousemove', function(location) {
+					me.mouseMove.fire({ 'location': new mxn.LatLonPoint(location.lat(), location.lng()) });
+				});
 				
 				this.loaded[api] = true;
 				me.load.fire();
