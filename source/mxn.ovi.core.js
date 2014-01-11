@@ -442,6 +442,10 @@ Marker: {
 
 	updateIcon: function(iconUrl, iconSize) {
 		throw 'Not implemented';
+	},
+
+	updateLocation: function(point) {
+		throw 'Not implemented';
 	}
 	
 },

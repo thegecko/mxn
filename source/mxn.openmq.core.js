@@ -314,6 +314,10 @@ Marker: {
 
 	updateIcon: function(iconUrl, iconSize) {
 		// TODO: Add provider code
+	},
+
+	updateLocation: function(point) {
+		// TODO: Add provider code
 	}
 	
 },
